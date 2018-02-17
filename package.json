@@ -1,0 +1,23 @@
+{
+	"name": "shadowcon",
+	"version": "1.0.0",
+	"description": "The website for Shadowcon.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/Cifram/shadowcon-node.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Cifram/shadowcon-node/issues"
+	},
+	"homepage": "https://github.com/Cifram/shadowcon-node#readme",
+	"dependencies": {
+		"@types/express": "^4.11.1",
+		"@types/node": "^9.4.6",
+		"express": "^4.16.2",
+		"typescript": "^2.7.2"
+	}
+}
