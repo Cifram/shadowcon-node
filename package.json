@@ -15,9 +15,15 @@
 	},
 	"homepage": "https://github.com/Cifram/shadowcon-node#readme",
 	"dependencies": {
+		"@types/csprng": "^0.1.0",
 		"@types/express": "^4.11.1",
+		"@types/mysql": "^2.15.2",
 		"@types/node": "^9.4.6",
+		"csprng": "^0.1.2",
 		"express": "^4.16.2",
+		"mysql": "^2.15.0",
+		"pg": "^7.4.1",
+		"scrypt": "^6.0.3",
 		"typescript": "^2.7.2"
 	}
 }
