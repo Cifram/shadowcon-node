@@ -10,7 +10,7 @@ let body = async function() {
 	}
 
 	let password = async function() {
-		return await PasswordHash.hash("1234")
+		return database.escape(await PasswordHash.hash("1234"))
 	}
 
 	try {
@@ -29,12 +29,12 @@ let body = async function() {
 		await query(
 			"INSERT INTO users " +
 			"(email, name, password, staff) " +
-			"VALUES(\"herufeanor@gmail.com\", \"Michael Powell\", \"" + await password() + "\", TRUE)"
+			"VALUES(\"herufeanor@gmail.com\", \"Michael Powell\", " + await password() + ", TRUE)"
 		)
 		await query(
 			"INSERT INTO users " +
 			"(email, name, password, staff) " +
-			"VALUES(\"rando@gmail.com\", \"Bob Nobody\", \"" + await password() + "\", FALSE)"
+			"VALUES(\"rando@gmail.com\", \"Bob Nobody\", " + await password() + ", FALSE)"
 		)
 
 		let returnedPasswords = await query("SELECT password FROM users")

@@ -4,7 +4,7 @@
 	"description": "The website for Shadowcon.",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "mocha **/*.test.js"
 	},
 	"repository": {
 		"type": "git",
@@ -25,5 +25,9 @@
 		"pg": "^7.4.1",
 		"scrypt": "^6.0.3",
 		"typescript": "^2.7.2"
+	},
+	"devDependencies": {
+		"@types/mocha": "^2.2.48",
+		"mocha": "^5.0.1"
 	}
 }
