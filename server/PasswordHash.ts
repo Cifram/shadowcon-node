@@ -8,6 +8,6 @@ export = {
 	},
 
 	verify: async function(password: string, hash: string): Promise<boolean> {
-		return await scrypt.verifyKdf(Buffer.from(hash, "hex"), password, params)
+		return await scrypt.verifyKdf(Buffer.from(hash, "hex"), password)
 	},
 }
