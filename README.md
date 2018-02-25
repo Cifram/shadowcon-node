@@ -77,7 +77,7 @@ cd client
 webpack
 ```
 
-However, it's not recommended you build them manually. The VS Code project has build tasks for both of these. If you hit `ctrl+shift+p` and type `run` in the menu, and select `Tasks: Run Task`, you'll see a list of available tasks. Among them are `Build Client` and `Build Server`. These will do the builds. Even better, though, are the options `Watch Client` and `Watch Server`. These will initiate watch processes that will automatically rebuild any time any code changes.
+However, it's not recommended you build them manually. The VS Code project has build tasks for both of these. If you hit `ctrl+shift+p` and type `run` in the menu, and select `Tasks: Run Task`, you'll see a list of available tasks. Among them are `build client` and `build server`. These will do the builds. Even better, though, are the options `build client (watch)` and `build server (watch)`. These will initiate watch processes that will automatically rebuild any time any code changes.
 
 ## Test Database Setup
 
@@ -87,7 +87,7 @@ Once the MariaDB is installed, you'll want to add the database and put some basi
 node server/setupdb.js
 ```
 
-You can also use the `Setup DB` task inside VS Code.
+You can also use the `setup db` task inside VS Code.
 
 ## Running the Server
 

@@ -1,3 +1,4 @@
+import path = require('path')
 import Express = require('express')
 import Router = require('./Router')
 import MysqlDatabase = require('./MysqlDatabase')
@@ -14,11 +15,11 @@ app.use((req, res, next) => {
 Router(db, app)
 
 app.get("/", (req, res) => {
-	res.sendfile("./assets/index.html")
-});
+	res.sendFile(path.join(__dirname, '..') + "/assets/index.html")
+})
 
 app.get("/**", (req, res) => {
-	res.sendfile("./assets/" + req.path)
+	res.sendFile(path.join(__dirname, '..') + "/assets/" + req.path)
 })
 
 app.listen(3000, () => console.log("Express server listening on port 3000"))

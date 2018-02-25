@@ -51,10 +51,23 @@
 			"type": "shell",
 			"command": "nodemon",
 			"options": {
-				"cwd": "client"
+				"cwd": "server"
 			},
 			"args": [
-				"../server/src/index.js"
+				"src/index.js"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "setup db",
+			"type": "shell",
+			"command": "node",
+			"options": {
+				"cwd": "server"
+			},
+			"args": [
+				"setupdb.js"
 			],
 			"isBackground": true,
 			"problemMatcher": []

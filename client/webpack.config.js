@@ -30,8 +30,10 @@ module.exports = {
 			onBuildStart: [
 			],
 			onBuildEnd: [
-				'cp node_modules/react/umd/react.development.js assets/react.js',
-				'cp node_modules/react-dom/umd/react-dom.development.js assets/react-dom.js'
+				'rm -rf ../server/assets',
+				'cp -r assets ../server/assets',
+				'cp node_modules/react/umd/react.development.js ../server/assets/react.js',
+				'cp node_modules/react-dom/umd/react-dom.development.js ../server/assets/react-dom.js',
 			]
 		})
 	],
