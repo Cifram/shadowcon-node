@@ -1,5 +1,5 @@
-import Database = require('./server/MysqlDatabase')
-import PasswordHash = require("./server/PasswordHash")
+import Database = require('./src/MysqlDatabase')
+import PasswordHash = require("./src/PasswordHash")
 
 let body = async function() {
 	let database = await new Database()

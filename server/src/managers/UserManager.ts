@@ -1,4 +1,4 @@
-import UserModel = require('../../common/models/UserModel')
+import UserModel = require('../../../common/models/UserModel')
 import Database = require('../Database')
 import HttpError = require('../HttpError')
 

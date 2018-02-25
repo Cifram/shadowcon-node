@@ -1,0 +1,21 @@
+{
+  "name": "shadowcon-client",
+  "version": "1.0.0",
+  "description": "Client code for the Shadowcon website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha **/*.test.js"
+  },
+  "dependencies": {
+    "@types/react": "^16.0.38",
+    "@types/react-dom": "^16.0.4",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.5.0",
+    "source-map-loader": "^0.2.3",
+    "typescript": "^2.7.2",
+    "webpack-shell-plugin": "^0.5.0"
+  }
+}

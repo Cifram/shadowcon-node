@@ -1,6 +1,6 @@
 # Setting Up Dev Environment
 
-This is intended to be edited on Windows, using VS Code with WSL. The included instructions and project files are designed for that use case. If you wish to use a different dev environment, you're on your own.
+This is intended to be edited on Windows, using VS Code with WSL. The included instructions and project files are designed for that use case. These instructions should need only slight modification to run on Linux, OS X, or with a Windows terminal emulator like Cygwin or MSYS2, but 
 
 ## Node.js
 
@@ -10,7 +10,24 @@ Install Node.js like so:
 sudo apt-get install nodejs
 ```
 
-TODO: Add instructions for making Node grab dependencies.
+## Node Dependencies
+
+There are actually two node projects here, the client and the server. You'll need to install dependencies for both. To do this, do the following:
+
+```
+cd server
+npm install
+cd ../client
+npm install
+```
+
+## Webpack
+
+Webpack is used to package up all the client HTML, JavaScript and CSS into one big file. To install it, type:
+
+```
+sudo npm install -g webpack
+```
 
 ## MariaDB
 
@@ -38,15 +55,65 @@ sudo mysql_secure_installation
 
 Since this is a local development setup, leave the password blank on root, and don't remove the anonymous users. But you should disallow connections from outside localhost, and remove the test database (you won't need it), and reload the privilege tables.
 
-TODO: Add instructions for setting up the initial test database.
-
 ## Visual Studio Code
 
 Download Visual Studio Code [here](https://code.visualstudio.com/download).
 
 Once it's installed and booted, go to File -> Open Folder... and select the folder to which you've pulled the git repo.
 
-TODO: Add instructions for using the build tasks to compile and run the server.
+## Building
+
+You can build the server like so:
+
+```
+cd server
+tsc
+```
+
+You can build the client like so:
+
+```
+cd client
+webpack
+```
+
+However, it's not recommended you build them manually. The VS Code project has build tasks for both of these. If you hit `ctrl+shift+p` and type `run` in the menu, and select `Tasks: Run Task`, you'll see a list of available tasks. Among them are `Build Client` and `Build Server`. These will do the builds. Even better, though, are the options `Watch Client` and `Watch Server`. These will initiate watch processes that will automatically rebuild any time any code changes.
+
+## Test Database Setup
+
+Once the MariaDB is installed, you'll want to add the database and put some basic test data in it. To do this, you'll first need to have built the server, as described above. Then you can use this command:
+
+```
+node server/setupdb.js
+```
+
+You can also use the `Setup DB` task inside VS Code.
+
+## Running the Server
+
+You can run the server directly by doing this:
+
+```
+cd server
+node index.js
+```
+
+However, this won't refresh when the code changes. In order to do that, you'll want nodemon. You can get nodemon through npm as follows:
+
+```
+npm install nodemon
+```
+
+Then you can run it like:
+
+```
+cd server
+nodemon index.js
+```
+
+You can also initiate nodemon from within VS Code with the `run server` task.
+
+Once the server is running, just navigate to http://localhost/ to test the site.
 
 # Project Architecture
 

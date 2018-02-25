@@ -3,19 +3,46 @@
 	"runner": "terminal",
 	"tasks": [
 		{
-			"label": "watch",
+			"label": "build server",
+			"type": "shell",
+			"command": "tsc",
+			"options": {
+				"cwd": "server"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "build server (watch)",
 			"type": "shell",
 			"command": "tsc",
 			"args": [
 				"--watch"
 			],
+			"options": {
+				"cwd": "server"
+			},
 			"isBackground": true,
 			"problemMatcher": []
 		},
 		{
-			"label": "build",
+			"label": "build client",
 			"type": "shell",
-			"command": "tsc",
+			"command": "webpack",
+			"options": {
+				"cwd": "client"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "build client (watch)",
+			"type": "shell",
+			"command": "webpack",
+			"args": [
+				"--watch"
+			],
+			"options": {
+				"cwd": "client"
+			},
 			"isBackground": true,
 			"problemMatcher": []
 		},
@@ -23,8 +50,11 @@
 			"label": "run server",
 			"type": "shell",
 			"command": "nodemon",
+			"options": {
+				"cwd": "client"
+			},
 			"args": [
-				"./index.js"
+				"../server/src/index.js"
 			],
 			"isBackground": true,
 			"problemMatcher": []

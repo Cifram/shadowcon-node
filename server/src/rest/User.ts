@@ -1,6 +1,6 @@
 import Express = require('express')
 import Database = require('../Database')
-import UserModel = require('../../common/models/UserModel')
+import UserModel = require('../../../common/models/UserModel')
 import UserManager = require('../managers/UserManager')
 import HttpError = require('../HttpError')
 import RequestWrapper = require('../RequestWrapper')

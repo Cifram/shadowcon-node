@@ -1,6 +1,6 @@
 import Express = require('express')
-import Router = require('./server/Router')
-import MysqlDatabase = require('./server/MysqlDatabase')
+import Router = require('./Router')
+import MysqlDatabase = require('./MysqlDatabase')
 
 let db = new MysqlDatabase()
 
@@ -14,7 +14,11 @@ app.use((req, res, next) => {
 Router(db, app)
 
 app.get("/", (req, res) => {
-	res.send("Hello World 2!")
+	res.sendfile("./assets/index.html")
 });
+
+app.get("/**", (req, res) => {
+	res.sendfile("./assets/" + req.path)
+})
 
 app.listen(3000, () => console.log("Express server listening on port 3000"))

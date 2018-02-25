@@ -4,8 +4,10 @@
 		"module": "commonjs",
 		"sourceMap": true,
 		"strict": true,
+		"jsx": "react",
 	},
 	"include": [
 		"**/*.ts",
+		"../common/**/*.ts"
 	],
 }
